@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnPath Pro — Enterprise Corporate Learning Platform | QuolyTech</title>
+  <meta name="description" content="Branded corporate learning management system (LMS) by QuolyTech for companies to create, assign, and track employee compliance training and skill mastery.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/apple-ui.css">
+</head>
+<body>
+
+  <!-- Top Apple Minimalist Header & Navbar -->
+  <header class="app-header">
+    <div class="header-container">
+      <!-- Brand Logo -->
+      <div class="brand-wrapper" id="brand-home-btn" title="LearnPath Pro Home">
+        <div class="brand-icon" data-icon="graduationCap"></div>
+        <div class="brand-info">
+          <div class="brand-name">
+            <span>LearnPath Pro</span>
+            <span class="brand-quoly-pill">QuolyTech</span>
+          </div>
+          <span class="brand-tagline">Corporate LMS &amp; Compliance OS</span>
+        </div>
+      </div>
+
+      <!-- Cupertino Segmented Control Navigation -->
+      <nav class="segmented-control" id="main-nav-tabs" aria-label="LMS Navigation">
+        <button class="segment-btn active" data-view="intro" title="Platform Overview">
+          <span data-icon="sparkles"></span>
+          <span>Overview</span>
+        </button>
+        <button class="segment-btn" data-view="learner" title="Employee Learning Path">
+          <span data-icon="bookOpen"></span>
+          <span>My Learning</span>
+          <span class="badge-pill" id="nav-active-count">3</span>
+        </button>
+        <button class="segment-btn" data-view="builder" title="Admin Course Builder">
+          <span data-icon="layers"></span>
+          <span>Course Builder</span>
+        </button>
+        <button class="segment-btn" data-view="analytics" title="Manager Compliance Analytics">
+          <span data-icon="barChart"></span>
+          <span>Team Analytics</span>
+          <span class="badge-pill" style="background:var(--apple-green);">94%</span>
+        </button>
+        <button class="segment-btn" data-view="certificate" title="Verified Certificates">
+          <span data-icon="award"></span>
+          <span>Certificates</span>
+        </button>
+      </nav>
+
+      <!-- Header Right Quick Actions -->
+      <div class="header-actions">
+        <div class="role-pill-switcher" id="btn-toggle-role" title="Switch User Role">
+          <span data-icon="users"></span>
+          <span id="lbl-role-pill">Role: Learner</span>
+        </div>
+
+        <button class="btn-header-cta" id="btn-header-cta">
+          <span data-icon="play"></span>
+          <span id="lbl-header-cta">Resume SOC2</span>
+        </button>
+
+        <button class="btn-mobile-toggle" id="btn-mobile-toggle" aria-label="Toggle Navigation">
+          <span data-icon="menu"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Sheet Navigation Drawer -->
+  <div class="mobile-drawer-overlay" id="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Menu">
+    <div class="mobile-drawer-header">
+      <div class="mobile-drawer-brand">
+        <div class="brand-icon sm" data-icon="graduationCap"></div>
+        <div class="brand-name">
+          <span>LearnPath Pro</span>
+          <span class="brand-quoly-pill">QuolyTech</span>
+        </div>
+      </div>
+      <button class="btn-close-mobile-drawer" id="btn-close-mobile-drawer" aria-label="Close menu">
+        <span data-icon="x"></span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer-actions">
+      <button class="btn-header-cta" id="btn-mobile-drawer-resume">
+        <span data-icon="play"></span>
+        <span>Resume SOC2 Course</span>
+      </button>
+      <div class="role-pill-switcher" id="btn-mobile-drawer-role">
+        <span data-icon="users"></span>
+        <span id="lbl-mobile-drawer-role">Role: Learner (Alex Rivera)</span>
+      </div>
+    </div>
+
+    <nav class="mobile-drawer-nav">
+      <div class="drawer-section-label">LMS PORTALS</div>
+      <button class="mobile-drawer-link active" data-drawer-view="intro">
+        <span data-icon="sparkles"></span>
+        <span>Platform Overview</span>
+      </button>
+      <button class="mobile-drawer-link" data-drawer-view="learner">
+        <span data-icon="bookOpen"></span>
+        <span>My Learning Path</span>
+        <span class="badge-pill">3</span>
+      </button>
+      <button class="mobile-drawer-link" data-drawer-view="builder">
+        <span data-icon="layers"></span>
+        <span>Admin Course Builder</span>
+      </button>
+      <button class="mobile-drawer-link" data-drawer-view="analytics">
+        <span data-icon="barChart"></span>
+        <span>Team Analytics</span>
+        <span class="badge-pill" style="background:var(--apple-green);">94%</span>
+      </button>
+      <button class="mobile-drawer-link" data-drawer-view="certificate">
+        <span data-icon="award"></span>
+        <span>Verified Certificate</span>
+      </button>
+    </nav>
+
+    <div class="mobile-drawer-footer">
+      <p>&copy; 2026 <strong>QuolyTech</strong> &bull; Enterprise LMS Platform</p>
+    </div>
+  </aside>
+
+  <!-- Main Content Views Container -->
+  <main class="main-content">
+
+    <!-- ====================================================================
+         VIEW 1: INTRO LANDING & INTERACTIVE LEARNING PATH SHOWCASE
+         ==================================================================== -->
+    <section class="view-section active" id="view-intro">
+      <div class="hero-section">
+        <div class="hero-pill">
+          <span data-icon="shieldCheck" style="color:var(--apple-blue);"></span>
+          <span>Engineered by QuolyTech &bull; Next-Gen Corporate LMS</span>
+        </div>
+
+        <h1 class="hero-title">
+          Enterprise Corporate Learning<br>
+          <span class="hero-gradient-text">Built for Velocity and Compliance.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Say goodbye to scattered Google Docs, unverified training decks, and zero visibility into audit readiness. LearnPath Pro gives L&amp;D teams and employees a unified platform with role-based paths and verifiable certificates.
+        </p>
+
+        <div class="hero-cta-row">
+          <button class="btn btn-primary btn-lg" id="btn-hero-launch-learner">
+            <span data-icon="bookOpen"></span>
+            <span>Open Employee Learning Path</span>
+          </button>
+          <button class="btn btn-secondary btn-lg" id="btn-hero-open-builder">
+            <span data-icon="layers"></span>
+            <span>Launch Course Builder</span>
+          </button>
+          <button class="btn btn-secondary btn-lg" id="btn-hero-view-analytics">
+            <span data-icon="barChart"></span>
+            <span>View Manager Analytics</span>
+          </button>
+        </div>
+
+        <!-- Interactive Learning Path Showcase -->
+        <div class="interactive-showcase-panel">
+          <div class="showcase-header-row">
+            <div>
+              <div style="font-size:0.72rem; font-weight:700; color:var(--apple-blue); text-transform:uppercase; letter-spacing:0.05em;">Interactive Product Simulation</div>
+              <h3 style="font-size:1.25rem; font-weight:800; color:var(--apple-text-primary);" id="showcase-title">
+                SOC2 Security &amp; Data Privacy 2026
+              </h3>
+            </div>
+
+            <!-- Path Selector Pills -->
+            <div style="display:flex; gap:6px; flex-wrap:wrap;">
+              <button class="btn btn-sm btn-primary" id="btn-showcase-soc2">SOC2 Compliance</button>
+              <button class="btn btn-sm btn-secondary" id="btn-showcase-ai">GenAI Engineering</button>
+              <button class="btn btn-sm btn-secondary" id="btn-showcase-lead">Leadership</button>
+            </div>
+          </div>
+
+          <div class="showcase-path-grid">
+            <div class="showcase-preview-box">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="ios-badge ios-badge-blue" id="showcase-badge">Mandatory Audit Track</span>
+                <span style="font-size:0.75rem; color:var(--apple-text-secondary);" id="showcase-time">Duration: 3h 45m</span>
+              </div>
+
+              <p style="font-size:0.85rem; color:var(--apple-text-secondary); line-height:1.5;" id="showcase-desc">
+                Zero-Trust architecture, customer PII encryption at rest, incident response escalation protocols, and SEC 4-day disclosure compliance.
+              </p>
+
+              <!-- Progress bar -->
+              <div class="ios-progress-container">
+                <div class="ios-progress-labels">
+                  <span>Track Completion</span>
+                  <span id="showcase-progress-num">75%</span>
+                </div>
+                <div class="ios-progress-track">
+                  <div class="ios-progress-fill" id="showcase-progress-bar" style="width: 75%;"></div>
+                </div>
+              </div>
+
+              <div style="display:flex; gap:10px;">
+                <button class="btn btn-primary btn-sm" id="btn-showcase-play">
+                  <span data-icon="play"></span>
+                  <span>Launch Interactive Player</span>
+                </button>
+                <button class="btn btn-secondary btn-sm" id="btn-showcase-cert">
+                  <span data-icon="award"></span>
+                  <span>View Certificate</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Live Module Progression -->
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <div class="ios-card" style="padding:14px; gap:8px;">
+                <div style="font-size:0.76rem; font-weight:700; color:var(--apple-text-primary);">Module 1: Zero Trust Core Principles</div>
+                <div style="font-size:0.72rem; color:var(--apple-green); display:flex; align-items:center; gap:6px;">
+                  <span data-icon="checkCircle"></span>
+                  <span>Completed &bull; 100% Score</span>
+                </div>
+              </div>
+              <div class="ios-card" style="padding:14px; gap:8px;">
+                <div style="font-size:0.76rem; font-weight:700; color:var(--apple-text-primary);">Module 2: Customer Data Encryption</div>
+                <div style="font-size:0.72rem; color:var(--apple-green); display:flex; align-items:center; gap:6px;">
+                  <span data-icon="checkCircle"></span>
+                  <span>Completed &bull; AES-256 Protocol</span>
+                </div>
+              </div>
+              <div class="ios-card" style="padding:14px; gap:8px; border-color:var(--apple-blue);">
+                <div style="font-size:0.76rem; font-weight:700; color:var(--apple-blue);">Module 3: Incident Response &amp; Escalation</div>
+                <div style="font-size:0.72rem; color:var(--apple-text-secondary); display:flex; align-items:center; gap:6px;">
+                  <span data-icon="clock"></span>
+                  <span>In Progress &bull; Lesson 3.2 Next</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Highlights Grid -->
+      <div class="feature-tiles-grid">
+        <div class="feature-tile">
+          <div class="feature-tile-icon icon-blue" data-icon="layers"></div>
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary);">Interactive Course Builder</h3>
+          <p style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.5;">
+            Build multi-module curriculums with streaming video lessons, auto-graded quizzes, and downloadable PDF standard operating procedures.
+          </p>
+        </div>
+
+        <div class="feature-tile">
+          <div class="feature-tile-icon icon-indigo" data-icon="barChart"></div>
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary);">Manager Audit Analytics</h3>
+          <p style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.5;">
+            Real-time compliance heatmaps, department breakdown tracking, and 1-click nudge reminders for upcoming certification renewals.
+          </p>
+        </div>
+
+        <div class="feature-tile">
+          <div class="feature-tile-icon icon-green" data-icon="award"></div>
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary);">Verifiable Certificates</h3>
+          <p style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.5;">
+            Cryptographically hashed completion credentials with print-ready PDF export and public verification URLs by QuolyTech.
+          </p>
+        </div>
+      </div>
+
+      <!-- Problem vs Solution Matrix -->
+      <div class="comparison-grid">
+        <div class="comparison-card problem">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; color:var(--apple-red);">
+            <span data-icon="alertCircle"></span>
+            <span style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">The Legacy Problem</span>
+          </div>
+          <h4 style="font-size:1.15rem; font-weight:800; color:var(--apple-text-primary); margin-bottom:10px;">Scattered Training Decks &amp; Audit Blindspots</h4>
+          <ul style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.6; padding-left:18px;">
+            <li>Slides and recordings buried in random shared folders without tracking.</li>
+            <li>No automated proof of employee compliance for SOC2 or ISO audits.</li>
+            <li>Manual HR spreadsheets that go stale within days.</li>
+            <li>Zero interactive knowledge checks or comprehension validation.</li>
+          </ul>
+        </div>
+
+        <div class="comparison-card solution">
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:12px; color:var(--apple-green);">
+            <span data-icon="checkCircle"></span>
+            <span style="font-size:0.78rem; font-weight:700; text-transform:uppercase;">The LearnPath Pro Solution</span>
+          </div>
+          <h4 style="font-size:1.15rem; font-weight:800; color:var(--apple-text-primary); margin-bottom:10px;">Centralized Corporate Learning OS</h4>
+          <ul style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.6; padding-left:18px;">
+            <li>Unified employee dashboard with personalized learning tracks.</li>
+            <li>Instant audit readiness reporting (94.2% company-wide certified).</li>
+            <li>Automated deadline alerts and single-click employee nudges.</li>
+            <li>Integrated video streaming, interactive quizzes, and PDF credentials.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: LEARNER DASHBOARD (EMPLOYEE LEARNING PATH)
+         ==================================================================== -->
+    <section class="view-section" id="view-learner">
+      <!-- Learner Profile & KPI Strip -->
+      <div class="learner-profile-strip">
+        <div class="learner-info-col">
+          <div class="learner-avatar">AR</div>
+          <div>
+            <h2 style="font-size:1.25rem; font-weight:800; color:var(--apple-text-primary);" id="learner-profile-name">Alex Rivera</h2>
+            <div style="font-size:0.82rem; color:var(--apple-text-secondary);">
+              Senior Cloud Infrastructure Engineer &bull; Platform Engineering
+            </div>
+          </div>
+        </div>
+
+        <div class="learner-stats-pills">
+          <div class="stat-metric-pill">
+            <span data-icon="clock" style="color:var(--apple-blue);"></span>
+            <span><strong>38.5 hrs</strong> Completed</span>
+          </div>
+          <div class="stat-metric-pill">
+            <span data-icon="award" style="color:var(--apple-green);"></span>
+            <span id="stat-certs-count"><strong>4 Certs</strong> Earned</span>
+          </div>
+          <div class="stat-metric-pill">
+            <span data-icon="zap" style="color:var(--apple-orange);"></span>
+            <span><strong>14-Day</strong> Streak</span>
+          </div>
+          <div class="stat-metric-pill">
+            <span data-icon="shieldCheck" style="color:var(--apple-indigo);"></span>
+            <span><strong>98%</strong> Compliance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Title -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+        <div>
+          <h3 style="font-size:1.3rem; font-weight:800; color:var(--apple-text-primary);">Assigned Learning Paths</h3>
+          <p style="font-size:0.82rem; color:var(--apple-text-secondary);">Courses curated for your engineering role and annual regulatory compliance.</p>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="btn-learner-refresh">
+          <span data-icon="sparkles"></span>
+          <span>Check for New Courses</span>
+        </button>
+      </div>
+
+      <!-- Courses Cards Grid -->
+      <div class="courses-cards-grid" id="learner-courses-grid">
+        <!-- Dynamically rendered by JavaScript -->
+      </div>
+
+      <!-- Completed Certifications Section -->
+      <div style="margin-top:36px;">
+        <h3 style="font-size:1.15rem; font-weight:800; color:var(--apple-text-primary); margin-bottom:16px;">
+          Completed Credentials &amp; Verified Badges
+        </h3>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;" id="completed-courses-list">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: ADMIN COURSE BUILDER STUDIO
+         ==================================================================== -->
+    <section class="view-section" id="view-builder">
+      <div style="margin-bottom:24px;">
+        <span class="ios-badge ios-badge-indigo">Curriculum Studio</span>
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--apple-text-primary); margin-top:6px;">Create &amp; Publish Corporate Course</h2>
+        <p style="font-size:0.85rem; color:var(--apple-text-secondary);">
+          Author structured training modules with video lessons, comprehension quizzes, and role targeting.
+        </p>
+      </div>
+
+      <div class="builder-layout">
+        <!-- Left: Course Creator Form -->
+        <div class="ios-card">
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:18px;">
+            Course Metadata &amp; Structure
+          </h3>
+
+          <form id="form-course-builder">
+            <div class="form-group">
+              <label class="form-label" for="input-course-title">Course Title</label>
+              <input type="text" class="form-input" id="input-course-title" placeholder="e.g., Cloud Security Architecture &amp; IAM 2026" required value="AWS &amp; Kubernetes Incident Escalation">
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label class="form-label" for="select-course-category">Curriculum Category</label>
+                <select class="form-select" id="select-course-category">
+                  <option value="Security &amp; Compliance">Security &amp; Compliance</option>
+                  <option value="Technical Engineering" selected>Technical Engineering</option>
+                  <option value="Leadership &amp; Management">Leadership &amp; Management</option>
+                  <option value="Sales Enablement">Sales Enablement</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="select-course-tier">Assignment Tier</label>
+                <select class="form-select" id="select-course-tier">
+                  <option value="Mandatory">Mandatory Compliance</option>
+                  <option value="Recommended" selected>Recommended Elective</option>
+                  <option value="Executive">Executive Leadership</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label class="form-label" for="select-course-dept">Target Department</label>
+                <select class="form-select" id="select-course-dept">
+                  <option value="All Company">All Company (Global)</option>
+                  <option value="Platform Engineering" selected>Platform Engineering</option>
+                  <option value="Product &amp; Design">Product &amp; Design</option>
+                  <option value="Enterprise Sales">Enterprise Sales</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="input-pass-threshold">Passing Quiz Threshold: <span id="lbl-threshold">80%</span></label>
+                <input type="range" min="60" max="100" value="80" step="5" class="form-input" id="input-pass-threshold" style="padding:0; height:32px;">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="input-course-desc">Executive Summary / Objectives</label>
+              <textarea class="form-textarea" id="input-course-desc" rows="3">Hands-on protocols for handling multi-region container failovers, isolating compromised pods, and root-cause post-mortems.</textarea>
+            </div>
+
+            <!-- Modules list -->
+            <div style="margin-top:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span class="form-label">Course Modules (3 Configured)</span>
+                <button type="button" class="btn btn-sm btn-secondary" id="btn-add-module-row">
+                  <span data-icon="plus"></span>
+                  <span>Add Module</span>
+                </button>
+              </div>
+
+              <div class="builder-modules-list" id="builder-modules-container">
+                <div class="builder-module-item">
+                  <div>
+                    <strong style="font-size:0.85rem;">Module 1: Detecting Pod Anomalies</strong>
+                    <div style="font-size:0.75rem; color:var(--apple-text-secondary);">Video Lesson &bull; 25 mins</div>
+                  </div>
+                  <span class="ios-badge ios-badge-blue">Video</span>
+                </div>
+                <div class="builder-module-item">
+                  <div>
+                    <strong style="font-size:0.85rem;">Module 2: Network Policy Isolation</strong>
+                    <div style="font-size:0.75rem; color:var(--apple-text-secondary);">Interactive SOP &bull; 30 mins</div>
+                  </div>
+                  <span class="ios-badge ios-badge-green">Document</span>
+                </div>
+                <div class="builder-module-item">
+                  <div>
+                    <strong style="font-size:0.85rem;">Module 3: Knowledge Evaluation Quiz</strong>
+                    <div style="font-size:0.75rem; color:var(--apple-text-secondary);">Assessment &bull; 80% to Pass</div>
+                  </div>
+                  <span class="ios-badge ios-badge-orange">Quiz</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:24px; display:flex; gap:12px;">
+              <button type="submit" class="btn btn-primary btn-lg" id="btn-publish-course" style="flex:1;">
+                <span data-icon="sparkles"></span>
+                <span>Publish Course to Platform</span>
+              </button>
+              <button type="button" class="btn btn-secondary" id="btn-reset-builder">Reset</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Right: Live Card Preview -->
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary);">
+            Live Learner Card Preview
+          </h3>
+
+          <div class="ios-card" style="border-color:var(--apple-blue);">
+            <div class="ios-card-header">
+              <span class="ios-badge ios-badge-indigo" id="preview-badge">Recommended</span>
+              <span style="font-size:0.75rem; color:var(--apple-text-secondary);" id="preview-dept">Platform Engineering</span>
+            </div>
+
+            <h4 style="font-size:1.15rem; font-weight:800; color:var(--apple-text-primary); margin-bottom:8px;" id="preview-title">
+              AWS &amp; Kubernetes Incident Escalation
+            </h4>
+
+            <p style="font-size:0.82rem; color:var(--apple-text-secondary); line-height:1.5; margin-bottom:16px;" id="preview-desc">
+              Hands-on protocols for handling multi-region container failovers, isolating compromised pods, and root-cause post-mortems.
+            </p>
+
+            <div class="ios-progress-container">
+              <div class="ios-progress-labels">
+                <span>Enrollment Status</span>
+                <span>Ready to Launch</span>
+              </div>
+              <div class="ios-progress-track">
+                <div class="ios-progress-fill" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--apple-border); padding-top:14px; margin-top:8px;">
+              <span style="font-size:0.75rem; color:var(--apple-text-tertiary);">3 Modules &bull; Passing 80%</span>
+              <button class="btn btn-primary btn-sm" disabled style="opacity:0.8;">Enroll Preview</button>
+            </div>
+          </div>
+
+          <!-- L&D Admin Quick Stats -->
+          <div class="ios-card" style="padding:18px;">
+            <h4 style="font-size:0.85rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:10px;">L&amp;D Studio Capabilities</h4>
+            <ul style="font-size:0.78rem; color:var(--apple-text-secondary); line-height:1.6; padding-left:16px;">
+              <li>Dynamic role assignment (Engineering, Sales, All Company).</li>
+              <li>Integrated video streaming + time-stamped lessons.</li>
+              <li>Automated certificate generation upon passing threshold.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 4: MANAGER & L&D COMPLIANCE ANALYTICS
+         ==================================================================== -->
+    <section class="view-section" id="view-analytics">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:24px; flex-wrap:wrap; gap:16px;">
+        <div>
+          <span class="ios-badge ios-badge-green">Executive Telemetry</span>
+          <h2 style="font-size:1.6rem; font-weight:800; color:var(--apple-text-primary); margin-top:6px;">
+            Corporate Training &amp; Audit Readiness
+          </h2>
+          <p style="font-size:0.85rem; color:var(--apple-text-secondary);">
+            Tracking 168 employees across 5 business units ahead of the 2026 SOC2 audit.
+          </p>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" id="btn-export-audit-csv">
+          <span data-icon="download"></span>
+          <span>Export Audit Report (CSV)</span>
+        </button>
+      </div>
+
+      <!-- Top KPI Cards -->
+      <div class="analytics-top-kpis">
+        <div class="ios-card" style="padding:20px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--apple-text-tertiary);">Overall Compliance</div>
+          <div style="font-size:2rem; font-weight:800; color:var(--apple-green); margin-top:4px;" id="stat-overall-compliance">94.2%</div>
+          <div style="font-size:0.75rem; color:var(--apple-text-secondary);">Target: 90% &bull; +4.2% over threshold</div>
+        </div>
+
+        <div class="ios-card" style="padding:20px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--apple-text-tertiary);">Certified Headcount</div>
+          <div style="font-size:2rem; font-weight:800; color:var(--apple-text-primary); margin-top:4px;">156 / 168</div>
+          <div style="font-size:0.75rem; color:var(--apple-text-secondary);">12 employees pending final quiz</div>
+        </div>
+
+        <div class="ios-card" style="padding:20px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--apple-text-tertiary);">Audit Readiness Window</div>
+          <div style="font-size:2rem; font-weight:800; color:var(--apple-blue); margin-top:4px;">19 Days</div>
+          <div style="font-size:0.75rem; color:var(--apple-green); font-weight:600;">Status: Ready (Gold Tier)</div>
+        </div>
+
+        <div class="ios-card" style="padding:20px;">
+          <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; color:var(--apple-text-tertiary);">Total Hours Trained</div>
+          <div style="font-size:2rem; font-weight:800; color:var(--apple-indigo); margin-top:4px;">482.5 hrs</div>
+          <div style="font-size:0.75rem; color:var(--apple-text-secondary);">Avg 2.87 hrs / employee</div>
+        </div>
+      </div>
+
+      <!-- Department Breakdown Bars -->
+      <div class="ios-card" style="margin-bottom:28px;">
+        <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:16px;">
+          Department Completion Distribution
+        </h3>
+        <div style="display:flex; flex-direction:column; gap:14px;" id="dept-bars-container">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+
+      <!-- Team Members Roster & Nudge System -->
+      <div class="ios-card">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--apple-text-primary);">
+            Team Progress Roster &amp; Nudge Triggers
+          </h3>
+
+          <div style="display:flex; gap:10px; align-items:center;">
+            <input type="text" class="form-input" id="input-roster-search" placeholder="Search team member..." style="padding:6px 12px; font-size:0.80rem; width:200px;">
+            <button class="btn btn-sm btn-primary" id="btn-nudge-all-pending">
+              <span data-icon="bell"></span>
+              <span>Nudge All Pending</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="analytics-table-wrapper">
+          <table class="apple-table">
+            <thead>
+              <tr>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Assigned Track</th>
+                <th>Progress</th>
+                <th>Score</th>
+                <th>Status</th>
+                <th style="text-align:right;">Action</th>
+              </tr>
+            </thead>
+            <tbody id="team-roster-tbody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 5: VERIFIED CERTIFICATE VIEW & PDF GENERATOR
+         ==================================================================== -->
+    <section class="view-section" id="view-certificate">
+      <div style="text-align:center; margin-bottom:32px;">
+        <span class="ios-badge ios-badge-green">Cryptographically Verified Credential</span>
+        <h2 style="font-size:1.6rem; font-weight:800; color:var(--apple-text-primary); margin-top:6px;">
+          Official Certificate of Continuing Education
+        </h2>
+        <p style="font-size:0.85rem; color:var(--apple-text-secondary);">
+          Accredited by QuolyTech Corporate Learning Academy &bull; Compliant with SEC &amp; SOC2 standards.
+        </p>
+      </div>
+
+      <!-- Apple High-Fidelity Certificate Card -->
+      <div class="certificate-preview-card" id="certificate-print-area">
+        <div class="certificate-gold-seal" data-icon="award"></div>
+        <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--apple-text-tertiary); margin-bottom:6px;">
+          QuolyTech Corporate Learning Academy
+        </div>
+        <h1 style="font-size:1.8rem; font-weight:900; color:var(--apple-text-primary); margin-bottom:10px;">
+          Certificate of Competency &amp; Mastery
+        </h1>
+        <p style="font-size:0.88rem; color:var(--apple-text-secondary); margin-bottom:20px;">
+          This official credential certifies that
+        </p>
+
+        <div style="font-size:1.75rem; font-weight:800; color:var(--apple-blue); margin-bottom:6px;" id="cert-student-name">
+          Alex Rivera
+        </div>
+        <div style="font-size:0.85rem; color:var(--apple-text-secondary); margin-bottom:24px;">
+          Senior Cloud Infrastructure Engineer &bull; Novatech Enterprise Systems
+        </div>
+
+        <p style="font-size:0.85rem; color:var(--apple-text-secondary); max-width:560px; margin:0 auto 24px; line-height:1.6;">
+          Has successfully fulfilled all curriculum requirements, demonstrated comprehensive knowledge in Zero-Trust Access Control, Customer Data Encryption (AES-256), and P0 Incident Escalation, achieving honors in:
+        </p>
+
+        <div style="font-size:1.25rem; font-weight:800; color:var(--apple-text-primary); margin-bottom:28px;">
+          SOC2 Type II Security, Zero Trust &amp; Data Privacy 2026
+        </div>
+
+        <!-- Footer verification signatures -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; border-top:1px solid var(--apple-border); padding-top:20px; text-align:left;">
+          <div>
+            <div style="font-size:0.72rem; color:var(--apple-text-tertiary);">Accreditation Hash:</div>
+            <div style="font-family:monospace; font-size:0.78rem; font-weight:700; color:var(--apple-text-primary);">
+              QLY-CERT-2026-SOC2-9041
+            </div>
+            <div style="font-size:0.72rem; color:var(--apple-green); font-weight:600; margin-top:2px;">
+              &bull; Publicly Verified on QuolyTech Ledger
+            </div>
+          </div>
+
+          <div style="text-align:right;">
+            <div style="font-family:cursive, serif; font-size:1.2rem; color:var(--apple-blue);">Elena Vance, Ed.D.</div>
+            <div style="font-size:0.72rem; color:var(--apple-text-tertiary);">Chief Learning Officer &bull; QuolyTech</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:center; gap:14px; margin-top:32px;">
+        <button class="btn btn-primary btn-lg" id="btn-download-pdf-cert">
+          <span data-icon="download"></span>
+          <span>Download Verified PDF Certificate</span>
+        </button>
+        <button class="btn btn-secondary btn-lg" id="btn-share-linkedin-cert">
+          <span data-icon="sparkles"></span>
+          <span>Add to LinkedIn Profile</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====================================================================
+       INTERACTIVE MODAL: APPLE COURSE VIDEO PLAYER & QUIZ ENGINE
+       ==================================================================== -->
+  <div class="modal-overlay" id="modal-player">
+    <div class="modal-dialog" style="max-width:880px;">
+      <div class="modal-header">
+        <div class="modal-title">
+          <span data-icon="video" style="color:var(--apple-blue);"></span>
+          <span id="player-modal-course-title">SOC2 Security &amp; Data Privacy 2026</span>
+        </div>
+        <button class="modal-close-btn" data-close-modal="modal-player" aria-label="Close Player">&times;</button>
+      </div>
+
+      <div class="modal-body" style="padding:18px;">
+        <div class="player-container">
+          <!-- Video Screen & Controls -->
+          <div>
+            <div class="video-screen-wrapper">
+              <div class="video-mockup-poster">
+                <div style="text-align:center;">
+                  <button class="btn-video-center-play" id="btn-video-play-toggle">
+                    <span data-icon="play"></span>
+                  </button>
+                  <div style="margin-top:12px; font-size:0.85rem; font-weight:600;" id="player-current-lesson-label">
+                    Lesson 3.2: SEC 4-Day Regulatory Notification Rules
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bottom Controls -->
+              <div class="video-bottom-controls">
+                <div class="video-scrubber-track" id="video-scrubber">
+                  <div class="video-scrubber-fill" id="video-scrubber-fill" style="width: 45%;"></div>
+                </div>
+
+                <div class="video-controls-row">
+                  <div class="video-left-actions">
+                    <button style="background:transparent; border:none; color:#FFFFFF; cursor:pointer;" id="btn-mini-play">
+                      <span data-icon="play"></span>
+                    </button>
+                    <span id="player-timer-text">04:12 / 08:30</span>
+                  </div>
+
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span class="ios-badge" style="background:rgba(255,255,255,0.2); color:#FFFFFF;" id="btn-speed-toggle">1.0x</span>
+                    <span style="font-size:0.75rem; background:var(--apple-blue); padding:2px 6px; border-radius:4px;">HD</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive Knowledge Check Quiz Box -->
+            <div class="ios-card" style="margin-top:16px; padding:18px; border-color:var(--apple-blue);" id="interactive-quiz-container">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <span class="ios-badge ios-badge-orange">Interactive Knowledge Check</span>
+                <span style="font-size:0.75rem; color:var(--apple-text-secondary);" id="quiz-question-counter">Question 1 of 3</span>
+              </div>
+
+              <h4 style="font-size:0.95rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:12px;" id="quiz-question-text">
+                Under SOC2 Type II guidelines, what is the mandatory requirement for storing customer PII in cloud datastores?
+              </h4>
+
+              <div style="display:flex; flex-direction:column; gap:8px;" id="quiz-options-container">
+                <!-- Dynamically rendered -->
+              </div>
+
+              <div id="quiz-feedback-box" style="margin-top:12px; font-size:0.80rem; display:none; padding:10px; border-radius:8px;"></div>
+
+              <div style="display:flex; justify-content:flex-end; gap:8px; margin-top:14px;">
+                <button class="btn btn-primary btn-sm" id="btn-submit-quiz-answer">Check Answer</button>
+                <button class="btn btn-secondary btn-sm" id="btn-next-quiz-question" style="display:none;">Next Question &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Playlist & Modules -->
+          <div class="player-playlist-col">
+            <div style="font-size:0.78rem; font-weight:700; color:var(--apple-text-primary); margin-bottom:4px;">
+              Curriculum Lessons
+            </div>
+            <div class="playlist-lesson-item" data-play-lesson="1.1">
+              <span data-icon="checkCircle" style="color:var(--apple-green);"></span>
+              <span>1.1 Identity Verification</span>
+            </div>
+            <div class="playlist-lesson-item" data-play-lesson="1.2">
+              <span data-icon="checkCircle" style="color:var(--apple-green);"></span>
+              <span>1.2 Least-Privilege RBAC</span>
+            </div>
+            <div class="playlist-lesson-item" data-play-lesson="2.1">
+              <span data-icon="checkCircle" style="color:var(--apple-green);"></span>
+              <span>2.1 AES-256 Encryption</span>
+            </div>
+            <div class="playlist-lesson-item" data-play-lesson="3.1">
+              <span data-icon="checkCircle" style="color:var(--apple-green);"></span>
+              <span>3.1 P0 Breach Protocols</span>
+            </div>
+            <div class="playlist-lesson-item active" data-play-lesson="3.2">
+              <span data-icon="play" style="color:var(--apple-blue);"></span>
+              <span>3.2 SEC Notification Rules</span>
+            </div>
+            <div class="playlist-lesson-item" data-play-lesson="4.0">
+              <span data-icon="award" style="color:var(--apple-orange);"></span>
+              <span>4.0 Final Assessment</span>
+            </div>
+
+            <div style="margin-top:auto; padding-top:12px; border-top:1px solid var(--apple-border);">
+              <button class="btn btn-secondary btn-sm" id="btn-download-sop-guide" style="width:100%; justify-content:center;">
+                <span data-icon="download"></span>
+                <span>Download SOP Guide (PDF)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-sm" id="btn-mark-lesson-complete">
+          <span data-icon="checkCircle"></span>
+          <span>Mark Lesson as Completed</span>
+        </button>
+        <button class="btn btn-secondary btn-sm" data-close-modal="modal-player">Close Player</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" id="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <button class="mobile-nav-item active" data-bottom-view="intro" title="Overview">
+      <span class="mobile-nav-icon" data-icon="sparkles"></span>
+      <span class="mobile-nav-label">Overview</span>
+    </button>
+    <button class="mobile-nav-item" data-bottom-view="learner" title="My Learning">
+      <span class="mobile-nav-icon" data-icon="bookOpen"></span>
+      <span class="mobile-nav-label">My Learning</span>
+      <span class="mobile-nav-dot" id="bottom-learning-dot"></span>
+    </button>
+    <button class="mobile-nav-item" data-bottom-view="builder" title="Builder">
+      <span class="mobile-nav-icon" data-icon="layers"></span>
+      <span class="mobile-nav-label">Builder</span>
+    </button>
+    <button class="mobile-nav-item" data-bottom-view="analytics" title="Analytics">
+      <span class="mobile-nav-icon" data-icon="barChart"></span>
+      <span class="mobile-nav-label">Analytics</span>
+    </button>
+    <button class="mobile-nav-item" id="btn-bottom-menu" title="Menu">
+      <span class="mobile-nav-icon" data-icon="menu"></span>
+      <span class="mobile-nav-label">Menu</span>
+    </button>
+  </nav>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Global Footer with Official QuolyTech Copyright -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand-title">
+            <span data-icon="graduationCap" style="color:var(--apple-blue);"></span>
+            <span>LearnPath Pro</span>
+            <span class="brand-quoly-pill">QuolyTech</span>
+          </div>
+          <p class="footer-tagline">
+            Next-generation enterprise corporate learning management system for employee compliance, skill development, and audit verification.
+          </p>
+          <div class="footer-compliance-badges">
+            <span class="compliance-badge">SOC2 Type II Ready</span>
+            <span class="compliance-badge">SCORM &amp; xAPI Compliant</span>
+            <span class="compliance-badge">Hashed Credentials</span>
+          </div>
+        </div>
+
+        <div class="footer-link-group">
+          <div class="footer-link-title">LMS Navigation</div>
+          <a class="footer-link" data-footer-view="intro">Overview &amp; Features</a>
+          <a class="footer-link" data-footer-view="learner">Employee Learning Path</a>
+          <a class="footer-link" data-footer-view="builder">Admin Course Studio</a>
+          <a class="footer-link" data-footer-view="analytics">Manager Audit Analytics</a>
+          <a class="footer-link" data-footer-view="certificate">Verifiable Certificates</a>
+        </div>
+
+        <div class="footer-link-group">
+          <div class="footer-link-title">Enterprise Security</div>
+          <a class="footer-link">SAML 2.0 / Okta SSO</a>
+          <a class="footer-link">SCIM Directory Sync</a>
+          <a class="footer-link">FERPA &amp; GDPR Compliance</a>
+          <a class="footer-link">Cryptographic Audit Trails</a>
+        </div>
+
+        <div class="footer-link-group">
+          <div class="footer-link-title">Corporate &amp; Legal</div>
+          <a class="footer-link">QuolyTech Education Systems</a>
+          <a class="footer-link">Privacy &amp; Data Rights</a>
+          <a class="footer-link">Accreditation Standards</a>
+          <a class="footer-link">Terms of Service</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="copyright-notice">
+          &copy; 2026 <strong>QuolyTech</strong>. All rights reserved. LearnPath Pro&trade; is an enterprise learning management system engineered by QuolyTech.
+        </div>
+        <div>
+          <span>Apple HIG &bull; Modern iOS Design System</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Entry Script -->
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
